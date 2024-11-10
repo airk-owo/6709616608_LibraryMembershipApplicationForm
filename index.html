@@ -4,55 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Membership</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <header>
+        <h1>ระบบสมาชิกห้องสมุด</h1>
+        <h4>หากต้องการสมัครสมาชิกห้องสมุดโปรดกรอกข้อมูล</h4>
+    </header>
+    
+    <section>
     <form>
-        <label for="thai_name">ชื่อ-นามสกุล (ภาษาไทย)*</label>
-        <input type="text" id="thai_name" name="thai_name" required><br>
-        <label for="eng_name">ชื่อ-นามสกุล (ภาษาอังกฤษ)*</label>
-        <input type="text" id="eng_name" name="eng_name" required><br>
+        <fieldset>
+            <legend>ข้อมูลส่วนตัว</legend> 
+            <label for="thai_name">ชื่อ-นามสกุล (ภาษาไทย)<span>*</span></label>
+            <input class="input" type="text" id="thai_name" name="thai_name" required><br>
 
-        <label for="gender">เพศ*</label>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">ชาย</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">หญิง</label><br>
+            <label for="eng_name">ชื่อ-นามสกุล (ภาษาอังกฤษ)<span>*</span></label>
+            <input class="input" type="text" id="eng_name" name="eng_name" required><br>
 
-        <label for="student_id">รหัสนักศึกษา*</label>
-        <input type="number" id="student_id" name="student_id" required><br>
+            <label for="gender">เพศ<span>*</span></label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">ชาย</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">หญิง</label><br>
 
-        <label for="faculty">คณะที่ศึกษา*</label>
-        <select name="faculty" id="faculty">
-            <option value="science">คณะวิทยาศาสตร์</option>
-            <option value="science">คณะวิศวกรรมศาสตร์</option>
-            <option value="science">คณะนิติศาสตร์</option>
-            <option value="science">คณะรัฐศาสตร์</option>
-            <option value="science">คณะศิลปศาสตร์</option>
-            <option value="other">อื่น ๆ</option>
-        </select><br>
+            <label for="birth_day">วันเดือนปีเกิด<span>*</span></label>
+            <input class="input" type="date" id="birth_day" name="birth_day" required><br>
+        </fieldset><br>
+        <fieldset>
+            <legend>ข้อมูลนักศึกษา</legend>
+            <label for="student_id">รหัสนักศึกษา<span>*</span></label>
+            <input class="input" type="number" id="student_id" name="student_id" required><br>
 
-        <label for="email">ที่อยู่อีเมล*</label>
-        <input type="email" id="email" name="email" required><br>
+            <label for="faculty">คณะที่ศึกษา<span>*</span></label>
+            <select class="input" name="faculty" id="faculty">
+                <option value="science">คณะวิทยาศาสตร์</option>
+                <option value="science">คณะวิศวกรรมศาสตร์</option>
+                <option value="science">คณะนิติศาสตร์</option>
+                <option value="science">คณะรัฐศาสตร์</option>
+                <option value="science">คณะศิลปศาสตร์</option>
+                <option value="other">อื่น ๆ</option>
+            </select><br>
+            <label for="student_id">สาขา<span>*</span></label>
+            <input class="input" type="text" id="student_id" name="student_id" required><br>
+        </fieldset><br>
+        <fieldset>
+            <legend>ช่องทางการติดต่อ</legend>
+            <label for="email">ที่อยู่อีเมล<span>*</span></label>
+            <input class="input" type="email" id="email" name="email" required><br>
+            <label for="number">เบอร์โทรศัพท์<span>*</span></label>
+            <input class="input" type="number" id="number" name="number" required><br>
+        </fieldset><br>
+        <fieldset>
+            <label for="fav_book">ประเภทของหนังสือที่สนใจ</label>
+            <p>(คุณสามารถเลือกหลายคำตอบได้โดยการกดค้างที่ปุ่ม ctrl หรือ command)</p>
+            <select class="input" name="fav_book" id="fav_book" size="4" multiple="multiple">
+                <option value="fiction_and_literature">นิยายและวรรณกรรม</option>
+                <option value="science_and_technology">วิทยาการและเทคโนโลยี</option>
+                <option value="history_and_culture">ประวัติศาสตร์และวัฒนธรรม</option>
+                <option value="education_and_learning">การศึกษาและการเรียนรู้</option>
+                <option value="business_and_finance">ธุรกิจและการเงิน</option>
+                <option value="health_and_care">สุขภาพและการดูแลรักษา</option>
+                <option value="religion_and_philosophy">ศาสนาและปรัชญา</option>
+            </select><br>
+        </fieldset><br>
 
-        <label for="birth_day">วันเดือนปีเกิด*</label>
-        <input type="date" id="birth_day" name="birth_day" required><br>
+        <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked>
+        <label for="newsletter">ฉันต้องการสมัครรับข้อมูลของห้องสมุดทางอีเมล</label><br><br>
 
-        <label for="fav_book">ประเภทของหนังสือที่สนใจ*</label>
-        <p>(คุณสามารถเลือกหลายคำตอบได้โดยการกดค้างที่ปุ่ม ctrl หรือ command)</p>
-        <select name="fav_book" id="fav_book" size="4" multiple="multiple">
-            <option value="fiction_and_literature">นิยายและวรรณกรรม</option>
-            <option value="science_and_technology">วิทยาการและเทคโนโลยี</option>
-            <option value="history_and_culture">ประวัติศาสตร์และวัฒนธรรม</option>
-            <option value="education_and_learning">การศึกษาและการเรียนรู้</option>
-            <option value="business_and_finance">ธุรกิจและการเงิน</option>
-            <option value="health_and_care">สุขภาพและการดูแลรักษา</option>
-            <option value="religion_and_philosophy">ศาสนาและปรัชญา</option>
-        </select><br>
-
-        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
-        <label for="newsletter">ฉันต้องการสมัครรับข้อมูลของห้องสมุดทางอีเมล</label><br>
-
-        <input type="submit" value="ส่ง">
+        <center>
+            <input type="submit" value="   สมัครสมาชิก   ">
+        </center>
     </form>
+    </section>
 </body>
 </html>
